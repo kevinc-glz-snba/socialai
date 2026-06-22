@@ -1,0 +1,15 @@
+# API keys y archivos sensibles
+*.txt
+cloude api-key.txt
+
+# Entorno virtual
+backend/venv/
+backend/__pycache__/
+backend/.env
+
+# Dependencias de Node
+frontend/node_modules/
+
+# Archivos de sistema
+.vscode/
+.DS_Store
