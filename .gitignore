@@ -1,5 +1,4 @@
 # API keys y archivos sensibles
-*.txt
 cloude api-key.txt
 
 # Entorno virtual
