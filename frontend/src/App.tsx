@@ -30,7 +30,7 @@ function App() {
       try{
           //await indica que primero debe completarse esta tarea para
           //que se puedan ejecutar el resto de lineas de codigo
-          const respuesta = await fetch("http://127.0.0.1:8000/generar",{
+          const respuesta = await fetch(`${import.meta.env.VITE_API_URL}/generar`,{
               method: "POST",
               headers: {"Content-Type": "application/json"},
               body: JSON.stringify({negocio,publicacion,redSocial,tono})

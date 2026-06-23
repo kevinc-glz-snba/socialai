@@ -53,12 +53,12 @@ function GeneratorForm({setNegocio, setPublicacion, setRedSocial, setTono, handl
                     onChange={(e) => setRedSocial(e.target.value)}
                     className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
-                    <option value="Facebook">Facebook</option>
-                    <option value="Instagram">Instagram</option>
-                    <option value="X">X (Twitter)</option>
-                    <option value="TikTok">TikTok</option>
-                    <option value="LinkedIn">LinkedIn</option>
-                    <option value="WhatsApp">WhatsApp</option>
+                    <option value="Facebook">📘 Facebook</option>
+                    <option value="Instagram">📸 Instagram</option>
+                    <option value="X">🐦 X (Twitter)</option>
+                    <option value="TikTok">🎵 TikTok</option>
+                    <option value="LinkedIn">💼 LinkedIn</option>
+                    <option value="WhatsApp">💬 WhatsApp</option>
                 </select>
             </div>
 
@@ -71,12 +71,12 @@ function GeneratorForm({setNegocio, setPublicacion, setRedSocial, setTono, handl
                     onChange={(e) => setTono(e.target.value)}
                     className="w-full border border-gray-300 dark:border-gray-600 rounded-xl px-4 py-3 text-gray-800 dark:text-gray-100 bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
-                    <option value="Formal">Formal</option>
-                    <option value="Semi-formal">Semi-formal</option>
-                    <option value="Casual">Casual</option>
-                    <option value="Divertido">Divertido</option>
-                    <option value="Elegante">Elegante</option>
-                    <option value="De camaradas">De camaradas</option>
+                    <option value="Formal">👔 Formal</option>
+                    <option value="Semi-formal">🤝 Semi-formal</option>
+                    <option value="Casual">😊 Casual</option>
+                    <option value="Divertido">😄 Divertido</option>
+                    <option value="Elegante">✨ Elegante</option>
+                    <option value="De camaradas">🍻 De camaradas</option>
                 </select>
             </div>
         </section>
