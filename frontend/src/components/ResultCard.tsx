@@ -2,10 +2,13 @@ import { useState } from "react"
 import ReactMarkdown from "react-markdown"
 
 interface ResultCardProps {
+    handleGenerar : () => void
+    setResultado: (res: string) => void 
     resultado: string
+    cargando: boolean
 }
 
-function ResultCard({ resultado }: ResultCardProps) {
+function ResultCard({ handleGenerar, setResultado, resultado, cargando }: ResultCardProps) {
 
     const [copiado, setCopiado] = useState(false)
 
@@ -35,6 +38,17 @@ function ResultCard({ resultado }: ResultCardProps) {
                 className="w-full border-2 border-indigo-500 text-indigo-600 dark:text-indigo-400 font-semibold py-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors duration-200"
             >
                 {copiado ? "✅ ¡Copiado!" : "📋 Copiar"}
+            </button>
+
+            <button
+                onClick={() => {
+                    setResultado('...');
+                    handleGenerar();
+                }}
+                disabled={cargando}
+                className="mt-3 w-full border-2 border-indigo-500 text-indigo-600 dark:text-indigo-400 font-semibold py-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-colors duration-200"
+            >
+                {cargando ? "⏳ Regenerando..." : "🔄 Regenerar"}
             </button>
 
         </div>

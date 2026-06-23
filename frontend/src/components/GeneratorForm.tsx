@@ -1,56 +1,18 @@
-import { useState } from "react"
-
 interface GeneratorFormProps {
-    setResultado: (valor: string) => void
+    setNegocio: (valor: string) => void
+    setPublicacion: (valor: string) => void
+    setRedSocial: (valor: string) => void
+    setTono: (valor: string) => void
+    handleGenerar: () => void
+    negocio: string,
+    publicacion: string,
+    redSocial: string,
+    tono: string,
+    error: string,
+    cargando: boolean
 }
 
-function GeneratorForm({setResultado}: GeneratorFormProps) {
-    //Controlled components: React controla el valor de cada campo
-    //en lugar de dejarlo a DOM. Necesario para leer los valores 
-    //al momento de enviar el formulario.
-
-    const [negocio , setNegocio] = useState('')
-    const [publicacion , setPublicacion] = useState('')
-    const [redSocial , setRedSocial] = useState('Facebook')
-    const [tono, setTono] = useState('Formal')
-    const [error, setError] = useState('')
-    const [cargando, setCargando] = useState(false)
-
-    //Se usa async para evitar que esta tarea congele las
-    //otras funciones del sistema 
-    async function handleGenerar(){
-        // 1. Validar
-        if (negocio === "" || publicacion === "") {
-            setError("Por favor completa todos los campos.")
-            return  // detiene la ejecución aquí
-        }
-        setError("")
-        setCargando(true)
-        try{
-            //await indica que primero debe completarse esta tarea para
-            //que se puedan ejecutar el resto de lineas de codigo
-            const respuesta = await fetch("http://127.0.0.1:8000/generar",{
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({negocio,publicacion,redSocial,tono})
-            })
-            if (!respuesta.ok){
-                throw new Error("Algo salio mal en el servidor")
-            }
-            const datos = await respuesta.json()
-            setResultado(datos.resultado)
-            
-        }catch (error){
-            setError("Algo salio mal en el servidor")
-            console.log("Hubo un error:", error)
-        }finally{
-            //Se coloca setCargando dentro de finally para que 
-            //este cambie su valor sin importar el resultado de la
-            //consulta
-            setCargando(false)
-        } 
-        
-    }
+function GeneratorForm({setNegocio, setPublicacion, setRedSocial, setTono, handleGenerar, negocio, publicacion, redSocial, tono, error,cargando}: GeneratorFormProps) {
 
     return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
@@ -126,7 +88,7 @@ function GeneratorForm({setResultado}: GeneratorFormProps) {
         )}
 
         <button
-            onClick={handleGenerar}
+            onClick={() => handleGenerar()}
             disabled={cargando}
             className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-semibold py-3 rounded-xl transition-colors duration-200"
         >
