@@ -9,6 +9,7 @@ SocialAI es una aplicación web que usa inteligencia artificial para generar con
 [Ver aplicación en vivo](https://socialai-1b18yux13-kcgs.vercel.app/)
 
 <img width="696" height="682" alt="Image" src="https://github.com/user-attachments/assets/d5a4a004-a9e4-4aa5-a081-af4599daaee2" />
+
 ---
 
 ## ✨ Características
